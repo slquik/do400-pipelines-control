@@ -5,8 +5,6 @@ pipeline {
  }
  }
 
- ...output omitted...
-
  stages {
 
  stage('Run Tests') {
