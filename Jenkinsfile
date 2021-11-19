@@ -1,23 +1,38 @@
-node('nodejs') {
+pipeline {
 
- stage('Checkout') {
+ agent {
 
- git branch: 'main',
+ node {
 
- url: 'https://github.com/slquik/do400-pipelines-control'
+ label 'nodejs'
 
  }
 
- stage('Backend Tests') {
+ }
+
+ stages {
+
+ sta
+ge('Backend Tests') {
+
+ steps {
 
  sh 'node ./backend/test.js'
 
  }
 
+ }
+
  stage('Frontend Tests') {
+
+ steps {
+
  sh 'node ./frontend/test.js'
 
  }
 
-}
+ }
 
+ }
+
+}
